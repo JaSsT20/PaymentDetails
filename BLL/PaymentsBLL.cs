@@ -38,8 +38,7 @@ public class PaymentsBLL
     }
     public Payments? Search(int PaymentId)
     {
-        Payments Payments = new Payments();
-        return Payments = _context.Payments.Include(payment => payment.PaymentDetails).Where(payment => payment.PaymentId == PaymentId).SingleOrDefault();
+        return _context.Payments.Include(payment => payment.PaymentDetails).Where(payment => payment.PaymentId == PaymentId).SingleOrDefault();
         
     }
     public List<Payments> GetList(Expression<Func<Payments, bool>> criterion)
